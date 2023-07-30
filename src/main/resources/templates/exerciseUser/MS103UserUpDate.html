@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+	<title>会員更新</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+	<div class="text-center">
+		<h1 class="display-2">ユーザー更新</h1>
+	</div>
+	
+		<form method="GET" th:object="${user}" action="/exerciseUser/MS103UserUpDate">
+		<div class="form-group row" align="center">
+				<input type="hidden" th:field="*{userID}" />
+				<div th:if="${#fields.hasErrors('userID')}" th:errors="*{userID}"></div>
+
+				<label class="col-sm-4 col-form-label" style="font-size: 30px;">会員名：</label>
+				<div class="col-md-6"><input type="text" th:field="*{userName}" class="form-control"/>
+					<div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
+				</div>
+			
+				<label class="col-sm-4 col-form-label" style="font-size: 30px;">電話番号：</label>
+				<div class="col-md-6"><input type="text" th:field="*{userTelno}" class="form-control" />
+					<div th:if="${#fields.hasErrors('userTelno')}" th:errors="*{userTelno}"></div>
+				</div>
+			
+			
+				<label class="col-sm-4 col-form-label" style="font-size: 30px;">郵便番号：</label>
+				<div class="col-md-6"><input type="text" th:field="*{userPostcode}" class="form-control"/>
+					<div th:if="${#fields.hasErrors('userPostcode')}" th:errors="*{userPostcode}"></div>
+				</div>
+				
+				<label class="col-sm-4 col-form-label" style="font-size: 30px;">住所：</label>
+				<div class="col-md-6"><input type="text" th:field="*{userAddress}" class="form-control"/>
+					<div th:if="${#fields.hasErrors('userAddress')}" th:errors="*{userAddress}"></div>
+				</div>
+				
+				<label class="col-sm-4 col-form-label" style="font-size: 30px;">パスワード：</label>
+				<div class="col-md-6"><input type="password" th:field="*{userPassword}" class="form-control"/>
+					<div th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"></div>
+				</div>
+				
+				<div class="col-lg-12">　</div>
+								
+				<div class="col-lg-12"><input type="submit" value="更新" class="btn-lg btn-primary"/>
+					<input type="reset" value="クリア" class="btn-lg"/>
+				</div>
+	</div>
+	</form>
+
+	<form method="get" action="/exerciseUser/MS111LetsExercise" align="center">
+		<div><input type="submit" value="戻る" class="btn-lg btn-info"/></div>
+	</form>
+	
+	<br>
+	<br>
+		
+	<div align="center"  style="font-size: 40px;">現在の登録状況</div>
+	
+	<block th:if="${session.user != null}">
+	<div align="center" class="form-group row">
+		<p th:text="${msg}"></p>
+		
+		<label class="col-sm-4" style="font-size: 30px;">ID：</label>
+		<span th:text="${session.user.userID}" style="font-size: 30px;"/>
+		
+		<div class="col-lg-12"></div>
+					
+		<label class="col-sm-4 col-form-label" style="font-size: 30px;">会員名：</label>
+		<span th:text="${session.user.userName}" style="font-size: 30px;" />
+
+		<div class="col-lg-12"></div>
+			
+		<label class="col-sm-4 col-form-label" style="font-size: 30px;">電話番号：</label>
+		<span th:text="${session.user.userTelno}" style="font-size: 30px;"/>
+
+		<div class="col-lg-12"></div>
+
+		<label class="col-sm-4 col-form-label" style="font-size: 30px;">郵便番号：</label>
+		<span th:text="${session.user.userPostcode}"　style="font-size: 30px;" />
+
+		<div class="col-lg-12"></div>
+
+
+		<label class="col-sm-4 col-form-label" style="font-size: 30px;">住所：</label>
+		<span th:text="${session.user.userAddress}" style="font-size: 30px;" />
+
+		<div class="col-lg-12"></div>
+
+		<label class="col-sm-4 col-form-label" style="font-size: 30px;">パスワード：</label>
+		<span th:text="${session.user.userPassword}" style="font-size: 30px;" />
+	</div>		
+	</block>
+
+</body>

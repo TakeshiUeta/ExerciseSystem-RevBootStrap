@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>ResponseSample</title>
+</head>
+<body>
+<h1>ResponseSample</h1>
+
+<table>
+
+<tr>
+<td>ID:</td>
+<td th:text="${user.userID}"></td>
+</tr>
+
+<tr>
+<td>名前：</td>
+<td th:text="${user.userName}"></td>
+</tr>
+
+<tr>
+<td>電話番号</td>
+<td th:text="${user.userTelno}"></td>
+</tr>
+
+<tr>
+<td>郵便番号</td>
+<td th:text="${user.userPostcode}"></td>
+</tr>
+
+<tr>
+<td>住所</td>
+<td th:text="${user.userAddress}"></td>
+</tr>
+
+<tr>
+<td>パスワード</td>
+<td th:text="${user.userPassword}"></td>
+</tr>
+</table>
+
+</body>
+</html>

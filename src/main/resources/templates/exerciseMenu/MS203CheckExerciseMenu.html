@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>MS203CheckExerciseMenu</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+
+	<div class="text-center">
+		<h1 class="display-2">トレーニングメニュー確認</h1>
+		<table align="center">
+			<tr>
+				<td>
+					<form method="post" action="/exerciseResult/MS203Enter">
+						<input type="submit" value="確定" class="btn-primary btn-lg"/>
+					</form>
+				</td>
+
+				<td>
+					<form method="post" action="/exerciseMenu/MS201ExerciseMenu">
+						<input type="submit" value="戻る" class="btn-lg"/>
+					</form>
+				</td>
+
+				<td>
+					<form method="post" action="/exerciseUser/MS190Logout">
+						<input type="submit" value="ログアウト" class="btn-lg"/>
+					</form>
+				</td>
+			</tr>
+		</table>
+
+		<table border="1" align="center" class="table-striped">
+			<tr class="table-primary">
+				<th>No</th>
+				<th>トレーニングメニュー</th>
+				<th>消費カロリー</th>
+				<th>回数</th>
+				<th>合計カロリー(kcal)</th>
+			</tr>
+			<form method="POST" action="/exerciseMenu/MS203Recalculation" th:object="${exerciseListDto}">
+				<input type="submit" value="再計算" class="btn-lg btn-info">
+				<tr th:each="exercise,status: *{exerciseList}">
+					<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
+							th:text="${exercise.exerciseID}"></td>
+					<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseName}"
+							th:text="${exercise.exerciseName}"></td>
+					<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseCal}"
+							th:text="${exercise.exerciseCal}"></td>
+					<td><input type="text" th:field="*{exerciseList[__${status.index}__].count}"  class="form-control"/> </td>
+					<td><input type="hidden" th:text="${exercise.exerciseCal} * ${exercise.count}" /></td>
+				</tr>
+				<tr>
+					<th colspan="3">合計</th>
+					<td><input type="hidden" th:text="${totalCount}" </td>
+					<td><input type="hidden" th:text="${totalCal}" </td>
+				</tr>
+			</form>
+		</table>
+	</div>
+</body>

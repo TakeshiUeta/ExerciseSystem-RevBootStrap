@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<title>MS202PutExerciseMenu</title>
+</head>
+
+<body>
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+	<h1>メニュー新規設定</h1>
+
+	<table>
+		<td>
+			<form method="POST" action="/exerciseMenu/MS201ExerciseMenu">
+				<input type="submit" value="戻る" />
+			</form>
+		</td>
+		<td>
+			<form method="POST" action="/exerciseUser/MS190Logout">
+				<input type="submit" value="ログアウト" />
+			</form>
+		</td>
+	</table>
+	<table border="1">
+		<tr>
+			<th>No</th>
+			<th>新規トレーニングメニュー</th>
+			<th>新規メニュー消費カロリー(kcal)</th>
+			<th colspan="2"></th>
+		</tr>
+		<tr>
+			<form method="POST" action="/exerciseMenu/MS202Put" th:object="${exercise}">
+				<td>
+					<input type="hidden" th:field="*{exerciseID}" th:text="*{exerciseID}" />
+					<input type="hidden" th:field="*{userID}" />
+				</td>
+
+				<td><input type="text" th:field="*{exerciseName}" /></td>
+				<!--<div th:if="${#fields.hasErrors('exerciseName')}" th:errors="*{exerciseName}"></div>-->
+
+				<td><input type="text" th:field="${exercise.exerciseCal}" /></td>
+				<!--<div th:if="${#fields.hasErrors('exerciseCal')}" th:errors="*{exerciseCal}"></div>-->
+				<td><input type="submit" value="追加する" /></td>
+				<!--<td><input type="reset" value="クリア" /></td>-->
+			</form>
+		</tr>
+		<tr>
+			<th>No</th>
+			<th>変更するトレーニングメニュー</th>
+			<th>変更するメニュー消費カロリー(kcal)</th>
+			<th colspan="2"></th>
+		</tr>
+		<form method="POST" action="/exerciseMenu/MS202Modify" th:object="${exerciseListDto}">
+			<tr th:each="exercise,status: *{exerciseList}">
+				<td>
+					<input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
+						th:text="${exercise.exerciseID}" />
+					<input type="hidden" th:field="*{exerciseList[__${status.index}__].userID}" />
+				</td>
+				<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseName}" /></td>
+				<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseCal}" /></td>
+				<td><input type="submit" value="変更する" /></td>
+				<!--<td><input type="reset" value="クリア" /></td>-->
+			</tr>
+		</form>
+	</table>
+	<br>
+	<th:block th:if="${showEList != null}">
+		<div>以下のように変更されました</div>
+		<table th:each="e: ${showEList}"　border="1">
+			<tr>
+			<th>No</th>
+			<th>トレーニングメニュー</th>
+			<th>消費カロリー</th>
+			</tr>
+			<tr>
+				<td>
+					<div th:text=${e.exerciseID}></div>
+				</td>
+				<td>
+					<div th:text=${e.exerciseName}></div>
+				</td>
+				<td>
+					<div><p th:text=${e.exerciseCal}></p></div>
+				</td>
+			</tr>
+		</table>
+	</th:block>
+
+</body>

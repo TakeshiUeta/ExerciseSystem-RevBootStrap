@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>MS101UserLogin</title>
+</head>
+
+<body class="bg-light">
+	<div class="text-center">
+		<p th:text="${msg}"></p>
+		<h1 class="w-100 p-3 display-1">UserLogin</h1>
+		<div class="w-100 p-3 form-group">
+			<form method="post" th:object="${user}" action="/exerciseUser/MS111LetsExercise">
+				<div class="w-100 p-3 display-4">ユーザーID ：<input type="text" th:field="*{userID}" /></div>
+				<div class="w-100 p-3 display-4">パスワード ：<input type="password" th:field="*{userPassword}" />
+				</div>
+				<input type="submit" value="ログイン" class="btn-primary btn-lg" />
+				<input type="reset" value="クリア" class="btn-lg" />
+			</form>
+			<form method="POST" action="/exerciseUser/MS102UserRegist" class="w-100 p-3">
+				<div><input type="submit" value="ユーザー登録" class="btn-info btn-lg" />
+			</form>
+		</div>
+</body>
+
+</html>

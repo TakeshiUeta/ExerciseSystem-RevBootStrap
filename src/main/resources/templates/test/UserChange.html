@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+	<title>UserUpdate</title>
+</head>
+
+<body class="bg-light">
+	<div class="text-center">
+		<p th:text="${msg}"></p>
+		<h1>UserUpdate</h1>
+	</div>
+		<form method="GET" th:object="${user}" action="/test/UserChange">
+			<table align="center">
+				<tr>
+					<div class="form-group">
+						<th>ID:</th>
+
+						<td><input type="text" class="form-control" th:field="*{userID}" th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userID')}"  th:errors="*{userID}"></div>
+						</td>
+				</tr>
+
+				<tr>
+					<div class="form-group">
+						<th>名前：</th>
+						<td><input type="text" class="form-control" th:field="*{userName}" th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userName')}"  th:errors="*{userName}"></div>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="form-group">
+
+						<th>電話番号:</th>
+						<td><input type="text" class="form-control" th:field="*{userTelno}"
+								th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userTelno')}"  th:errors="*{userTelno}"></div>
+						</td>
+					</div>
+				</tr>
+
+
+				<tr>
+					<div class="form-group">
+
+						<th>郵便番号:</th>
+						<td><input type="text" class="form-control" th:field="*{userPostcode}"
+								th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userPostcode')}"  th:errors="*{userPostcode}"></div>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="form-group">
+
+						<th>住所:</th>
+						<td><input type="text" class="form-control" th:field="*{userAddress}"
+								th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userAddress')}"  th:errors="*{userAddress}"></div>
+						</td>
+					</div>
+				</tr>
+
+				<tr>
+					<div class="form-group">
+
+						<th>パスワード:</th>
+						<td><input type="text" class="form-control" th:field="*{userPassword}"
+								th:errorclass="is-invalid" />
+						<div th:if="${#fields.hasErrors('userPassword')}"  th:errors="*{userPassword}"></div>
+						</td>
+					</div>
+				</tr>
+				<tr>
+					<td><input type="submit" value="更新" class="btn btn-primary" align="center"/></td>
+				</tr>
+			</table>
+			<block th:if="${user.userName != null}">
+				<p th:text="${msg2}" class="text-center"></p>
+				<table align="center">
+					<tr>
+						<td>ID:</td>
+						<td th:text="${user.userID}"></td>
+					</tr>
+
+					<tr>
+						<td>名前：</td>
+						<td th:text="${user.userName}"></td>
+					</tr>
+
+					<tr>
+						<td>電話番号</td>
+						<td th:text="${user.userTelno}"></td>
+					</tr>
+
+					<tr>
+						<td>郵便番号</td>
+						<td th:text="${user.userPostcode}"></td>
+					</tr>
+
+					<tr>
+						<td>住所</td>
+						<td th:text="${user.userAddress}"></td>
+					</tr>
+
+					<tr>
+						<td>パスワード</td>
+						<td th:text="${user.userPassword}"></td>
+					</tr>
+				</table>
+			</block>
+		</form>
+
+		<form method="GET" action="/User" class="text-center">
+			<input type="submit" value="Userへ戻る" />
+		</form>
+</body>
+
+</html>

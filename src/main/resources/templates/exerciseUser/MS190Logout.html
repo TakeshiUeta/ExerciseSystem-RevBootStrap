@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>MS190Logout</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${user.userName}"/></div>
+	<div>ID:<span th:text="${user.userID}"/></div>
+	<div class="text-center">
+	<h1 class="display-2"><span th:text="${user.userName}"/>様</h1>
+		<h2 style="color:red; "class="display-4">ありがとうございました！<br>
+		また明日も頑張りましょうね！！</h2>
+	<p></p>
+		<form method="GET" action="/exerciseUser/MS101UserLogin">
+		<input type="submit" value="ログイン画面に戻る" class="btn-lg btn-primary"/>
+		</form>
+	</div>	
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<title>UserInsert</title>
+</head>
+
+<body>
+	<h1>UserInsert</h1>
+	<form th:object="${user}" method="GET" action="/test/UserUpDate">
+		<div>会員名：<input type="text" th:field="*{userName}" /></div>
+		<div>電話番号：<input type="text" th:field="*{userTelno}" /></div>
+		<div>郵便番号：<input type="text" th:field="*{userPostcode}" /></div>
+		<div>住所：<input type="text" th:field="*{userAddress}" /></div>
+		<div>パスワード：<input type="text" th:field="*{userPassword}" /></div>
+		<input type="submit" value="登録" />
+	</form>
+	<form method="GET" action="/User">
+		<input type="submit" value="User画面に戻る">
+	</form>
+</body>

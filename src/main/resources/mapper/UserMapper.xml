@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MapperとXMLのマッピング -->
+<mapper namespace="com.example.repository.UserMapper">
+	<!--マッピング定義（ユーザー） -->
+	<resultMap type="com.example.domain.user.model.MUser"
+		id="user">
+		<id column="user_id" property="userID" />
+		<result column="user_name" property="userName" />
+		<result column="user_telno" property="userTelno" />
+		<result column="user_postcode" property="userPostcode" />
+		<result column="user_address" property="userAddress" />
+		<result column="user_password" property="userPassword" />
+	</resultMap>
+
+	<!--ユーザー1件取得 -->
+	<select id="findById" resultMap="user">
+		SELECT * FROM user WHERE
+		USER_ID=#{userID}
+	</select>
+
+	<!--ユーザー全件表示 -->
+	<select id="findAll" resultMap="user">
+		SELECT * FROM user
+	</select>
+
+	<!--ユーザー登録 -->
+	<insert id="insertOne">
+		insert into user(
+		USER_ID
+		,USER_NAME
+		,USER_TELNO
+		,USER_POSTCODE
+		,USER_ADDRESS
+		,USER_PASSWORD
+		)values(
+		#{userID}
+		,#{userName}
+		,#{userTelno}
+		,#{userPostcode}
+		,#{userAddress}
+		,#{userPassword})
+	</insert>
+
+	<!--会員の1番最後に登録されたものを検索する -->
+	<select id="findMaxUser" resultMap="user">
+		SELECT * FROM user ORDER BY
+		user_id DESC LIMIT 1
+	</select>
+
+	<!--会員を1件削除する -->
+	<delete id="deleteOne">
+		DELETE FROM user WHERE USER_ID=#{userID}
+	</delete>
+
+	<!--会員を更新する -->
+	<update id="updateOne">
+		UPDATE user SET
+		user_name=#{userName},user_telno=#{userTelno}
+		,user_postcode=#{userPostcode},user_address=#{userAddress}
+		,user_password=#{userPassword}
+		WHERE user_id=#{userID}
+	</update>
+</mapper>

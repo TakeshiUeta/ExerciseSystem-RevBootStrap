@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<title>User</title>
+</head>
+
+<body>
+	<p th:text="${msg}"></p>
+	<h1>User</h1>
+	<div>
+		<form th:object="${user}" method="post" action="/test/db">
+			<div>ユーザーID ：<input type="text" th:field="*{userID}" /></div>
+			<div>パスワード ：<input type="text" th:field="*{userPassword}" /></div>
+			<input type="submit" value="クリック" />
+			<input type="reset" value="クリア" />
+		</form>
+		<form method="GET" action="/test/UserList">
+			<input type="submit" value="ユーザー一覧" />
+		</form>
+
+		<form method="POST" action="/test/UserUpDate">
+			<input type="submit" value="ユーザー登録" />
+		</form>
+
+		<form method="POST" action="/test/UserDelete">
+			<input type="submit" value="ユーザー削除" />
+		</form>
+
+		<form th:object="${user}" method="POST" action="/test/UserChange">
+			<div>更新ユーザーID：<input type="text" th:field="*{userID}"/></div>
+			<div>パスワード ：<input type="text" th:field="*{userPassword}" /></div>
+			<input type="submit" value="ユーザー更新" />
+		</form>
+
+	</div>
+</body>
+
+</html>

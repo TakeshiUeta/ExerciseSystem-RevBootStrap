@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>MS201ExerciseMenu</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+	
+	<div class="text-center">
+		<h1 class="display-2 w-100 p-3 ">トレーニングメニュー</h1>
+		<table border="1" align="center" class="table display-5">
+			<div class="form-group">
+				<tr>
+					<th class="table-danger">トレーニング件数</th>
+					<td class="table-success lead">
+						<div th:text="${session.exerciseCount}"></div>
+					</td>
+					<th class="table-danger">総合カロリー</th>
+					<td class="table-success lead">
+						<div th:text="${session.sumCal}">
+					</td>
+				</tr>
+			</div>
+		</table>
+		<table border="1" align="center">
+			<div class="form-group">
+				<th>検索キーワード</th>
+				<form method="POST" action="/exerciseMenu/searchExercise">
+					<td>
+						<input type="text" class="form-control" name="keyword" />
+					</td>
+					<td><input type="submit" class="btn btn-primary" value="検索" /></td>
+					<td><input type="reset"  value="クリア" /></td>
+				</form>
+			</div>
+		</table>
+
+		<table align="center">
+			<div class="form-group">
+				<td>
+					<form method="POST" action="/exerciseMenu/MS201Check"><input type="submit" class="btn btn-lg btn-primary " value="確認" /></form>
+				</td>
+				<td>
+					<form method="Get" action="/exerciseUser/MS111LetsExercise"><input type="submit" class="btn-lg" value="戻る" />
+					</form>
+				</td>
+				<td>
+					<form method="POST" action="/exerciseMenu/MS201NewSettings"><input type="submit" class="btn-lg" value="新規設定" />
+					</form>
+				</td>
+				<td>
+					<form method="POST" action="/exerciseUser/MS190Logout"><input type="submit" class="btn-lg" value="ログアウト" /></form>
+				</td>
+			</div>
+		</table>
+
+		<div align="center"><span th:text="${msg}"></span></div>
+
+		<table border="1" align="center" class="table-striped">
+			<div class="form-group">
+				<tr class="table-primary">
+					<th>No</th>
+					<th>トレーニングメニュー</th>
+					<th>消費カロリー</th>
+					<th>回数</th>
+					<th></th>
+				</tr>
+				<form method="GET" action="/exerciseMenu/MS201add" th:object="${exerciseListDto}">
+					<tr th:each="exercise,status: *{exerciseList}">
+						<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
+								th:text="${exercise.exerciseID}" class="form-control" ></td>
+						<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseName}"
+								th:text="${exercise.exerciseName}" class="form-control" ></td>
+						<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseCal}"
+								th:text="${exercise.exerciseCal}" class="form-control" ></td>
+						<td><input type="text" th:field="*{exerciseList[__${status.index}__].count}" class="form-control" /> </td>
+						<td><input type="submit" value="追加する"></td>
+					</tr>
+				</form>
+			</div>
+		</table>
+	</div>
+</body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>Let’sExercise！</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+	<div class="text-center">
+		<h1 align="center" class="display-1">Let’sExercise！</h1>
+		<p></p>
+		<table align="center">
+			<tr>
+				<form method="POST" action="/exerciseUser/MS103UserUpDate">
+					<td><input type="submit" value="会員更新" class="btn-lg btn-primary"></td>
+				</form>
+				<form method="POST" action="/exerciseMenu/MS201ExerciseMenu">
+					<td><input type="submit" value="トレーニングメニュー" class="btn-lg btn-info"></td>
+				</form>
+				<form method="POST" action="/exerciseUser/MS190Logout">
+					<td><input type="submit" value="ログアウト" class="btn-lg"></td>
+				</form>
+			</tr>
+		</table>
+	</div>
+</body>

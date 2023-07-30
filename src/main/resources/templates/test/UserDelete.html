@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<title>UserDelete</title>
+</head>
+
+<body>
+	<p th:text="${msg}"></p>
+	<h1>UserDelete</h1>
+	<form method="GET" th:object="${user}" action="/test/UserDelete">
+		<div>ID :<input type="text" th:field="*{userID}" /></div>
+		<div>パスワード:<input type="text" th:field="*{userPassword}" /></div>
+		<input type="submit" value="削除" />
+
+		<block th:if="${user.userName != null}">
+			<p th:text="${msg2}"></p>
+			<table>
+
+				<tr>
+					<td>ID:</td>
+					<td th:text="${user.userID}"></td>
+				</tr>
+
+				<tr>
+					<td>名前：</td>
+					<td th:text="${user.userName}"></td>
+				</tr>
+
+				<tr>
+					<td>電話番号</td>
+					<td th:text="${user.userTelno}"></td>
+				</tr>
+				
+				<tr>	----------------------------------------------------------------------------------------------------------------------------------------
+					<td>郵便番号</td>
+					<td th:text="${user.userPostcode}"></td>
+				</tr>
+
+				<tr>
+					<td>住所</td>
+					<td th:text="${user.userAddress}"></td>
+				</tr>
+
+				<tr>
+					<td>パスワード</td>
+					<td th:text="${user.userPassword}"></td>
+				</tr>
+			</table>
+		</block>
+		</form>
+
+		<form method="GET" action="/User">
+			<input type="submit" value="Userへ戻る" />
+		</form>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MapperとXMLのマッピング -->
+<mapper namespace="com.example.repository.ResultMapper">
+	<!--マッピング定義（結果） -->
+	<resultMap type="com.example.domain.user.model.MResult"
+		id="result">
+		<id column="result_id" property="resultID" />
+		<result column="user_id" property="userID" />
+		<result column="result_cal" property="resultCal" />
+		<result column="result_distance" property="resultDistance" />
+		<result column="result_count" property="resultCount" />
+		<result column="result_date" property="resultDate" />
+	</resultMap>
+
+	<!--結果1件取得 -->
+	<select id="findById" resultMap="result">
+		SELECT * FROM result WHERE
+		result_id=#{resultID}
+	</select>
+
+	<!--結果全件表示 -->
+	<select id="findAll" resultMap="result">
+		SELECT * FROM result
+	</select>
+
+	<!--ユーザーIdだけ紐付いている結果表示　 -->
+	<select id="findbyUserIdOnly" resultMap="result">
+		SELECT * FROM result
+		WHERE user_id=#{userID}　
+	</select>
+
+	<!--結果登録 -->
+	<insert id="insertOne">
+		insert into result(
+		result_id
+		,user_id
+		,result_cal
+		,result_distance
+		,result_count
+		,result_date
+		)values(
+		#{resultID}
+		,#{userID}
+		,#{resultCal}
+		,#{resultDistance}
+		,#{resultCount}
+		,#{resultDate}
+		)
+	</insert>
+
+	<!--筋トレの1番最後に登録されたものを検索する -->
+	<select id="findMaxResult" resultMap="result">
+		SELECT * FROM result
+		ORDER
+		BY 
+		RESULT_ID DESC LIMIT 1
+	</select>
+
+	<!--ユーザと紐付いている結果の日付だけ取得する-->
+	<select id="findResultDay" resultMap="result">
+		SELECT DISTINCT RESULT_DATE FROM result
+		where user_id=#{userID}
+		order by RESULT_DATE
+	</select>
+
+	<!--ユーザと結果の日付が紐付いている結果を取得する-->
+	<select id="findResultOne_day" resultMap="result">
+		SELECT * FROM result
+		WHERE user_id=#{userID}
+		AND RESULT_DATE=#{resultDate}		
+	</select>
+	
+	<!--結果を1件削除する -->
+	<delete id="deleteOne">
+		DELETE FROM result WHERE result_id=#{resultID}
+	</delete>
+</mapper>	

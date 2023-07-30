@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MapperとXMLのマッピング -->
+<mapper namespace="com.example.repository.ExerciseMapper">
+	<!--マッピング定義（筋トレ） -->
+	<resultMap type="com.example.domain.user.model.MExercise"
+		id="exercise">
+		<id column="exercise_id" property="exerciseID" />
+		<result column="user_id" property="userID" />
+		<result column="exercise_name" property="exerciseName" />
+		<result column="exercise_cal" property="exerciseCal" />
+	</resultMap>
+
+	<!--筋トレ1件取得 -->
+	<select id="findById" resultMap="exercise">
+		SELECT * FROM exercise WHERE
+		exercise_id=#{exerciseID}
+	</select>
+
+	<!--筋トレ全件表示 -->
+	<select id="findAll" resultMap="exercise">
+		SELECT * FROM exercise
+	</select>
+	
+	<!--ユーザーIdだけ紐付いている筋トレ表示　-->
+	<select id="findbyUserIdOnly" resultMap="exercise">
+		SELECT * FROM exercise WHERE user_id=#{userID}　
+	</select>
+
+	<!--ユーザーIDと紐付いている筋トレとユーザーIDがnullのものだけ表示する -->
+	<select id="findMany" resultMap="exercise">
+		SELECT * FROM exercise WHERE
+		user_id in (#{userID},'')
+	</select>
+	
+	<!--検索キーワードにヒットした筋トレメニューを全て取得する-->
+	<select id="findVarious" resultMap="exercise">
+		SELECT * FROM exercise
+		<where>
+			<if test="exerciseID != null">
+				exercise_id like '%'||#{exerciseID}||'%'
+			</if>
+			<if test="userID != null">
+				or user_id like '%'||#{userID}||'%'
+			</if>
+			<if test="exerciseName != null">
+				or exercise_name like '%'||#{exerciseName}||'%'
+			</if>
+			<if test="exerciseCal != null">
+				or exercise_cal like '%'||#{exerciseCal}||'%'
+			</if>
+		</where>
+	</select>
+
+	<!--筋トレ登録 -->
+	<insert id="insertOne">
+		insert into exercise(
+		exercise_id
+		,user_id
+		,exercise_name
+		,exercise_cal
+		)values(
+		#{exerciseID}
+		,#{userID}
+		,#{exerciseName}
+		,#{exerciseCal}
+		)
+	</insert>
+
+	<!--筋トレの1番最後に登録されたものを検索する -->
+	<select id="findMaxExercise" resultMap="exercise">
+		SELECT * FROM exercise
+		ORDER
+		BY
+		exercise_id DESC LIMIT 1
+	</select>
+
+	<!--筋トレを1件削除する -->
+	<delete id="deleteOne">
+		DELETE FROM exercise WHERE exercise_id=#{exerciseID}
+	</delete>
+
+	<!--筋トレを更新する -->
+	<update id="updateOne">
+		UPDATE exercise SET
+		exercise_name=#{exerciseName}
+		,exercise_cal=#{exerciseCal}
+		WHERE exercise_id=#{exerciseID}
+	</update>
+</mapper>

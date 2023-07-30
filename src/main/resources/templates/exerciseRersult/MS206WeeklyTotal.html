@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
+
+	<title>MS206WeeklyTotal</title>
+</head>
+
+<body class="bg-light">
+	<div>名前：<span th:text="${session.user.userName}" /></div>
+	<div>ID:<span th:text="${session.user.userID}" /></div>
+	<div class="text-center">
+		<h1 class="display-2">結果：一週間の集計</h1>
+		<div style="color: red; font-size : 30px;"><span th:text=${msg} /></div>
+		<table align="center">
+			<tr>
+				<td>
+					<form method="post" action="/exerciseResult/MS207MonthlyTotal">
+						<input type="submit" value="次に進む" class="btn-lg btn-primary"/>
+					</form>
+				</td>
+
+				<td>
+					<form method="post" action="/exerciseMenu/MS201ExerciseMenu">
+						<input type="submit" value="TOPに戻る" class="btn-lg"/>
+					</form>
+				</td>
+
+				<td>
+					<form method="get" action="/exerciseUser/MS190Logout">
+						<input type="submit" value="ログアウト" class="btn-lg"/>
+					</form>
+				</td>
+			</tr>
+		</table>
+
+		<table border="1" class="display-4 table-striped" align="center" style="font-size : 30px;">
+			<tr class="table-primary">
+				<th>日付</th>
+				<th>消費カロリー(kcal)</th>
+				<th>歩いた距離(km)</th>
+			</tr>
+			<tr th:each="Result: ${weeklyList}">
+				<td th:text="${Result.resultDate}"></td>
+				<td th:text="${Result.resultCal}"></td>
+				<td th:text="${Result.resultDistance}"></td>
+			</tr>
+			<tr>
+				<th colspan="1">合計</th>
+				<td th:text="${resultCalAll}"></td>
+				<td th:text="${resultDistanceAll}"> </td>
+			</tr>
+		</table>
+	</div>
+</body>
