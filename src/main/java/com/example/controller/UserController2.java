@@ -83,10 +83,10 @@ public class UserController2 {
 		// userにIDをセットする
 		user.setUserID(id);
 		// バリデーションチェック
-		/*
-		 * if(bindingResult.hasErrors()) { model.addAttribute("user",user); return
-		 * "exerciseUser/MS102UserRegist"; }
-		 */
+		if (bindingResult.hasErrors()) {
+			model.addAttribute("user", user);
+			return "exerciseUser/MS102UserRegist";
+		}
 		MUser mUser = modelMapper.map(user, MUser.class);
 		// 会員登録
 		userService.insertUserOne(mUser);

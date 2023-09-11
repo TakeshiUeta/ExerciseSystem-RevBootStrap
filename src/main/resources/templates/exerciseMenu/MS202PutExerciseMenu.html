@@ -4,90 +4,107 @@
 <head>
 	<meta charset="UTF-8">
 	</meta>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<!--CSS読込-->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<!--js読込-->
+	<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+	</meta>
 	<title>MS202PutExerciseMenu</title>
 </head>
 
-<body>
+<body class="bg-light">
 	<div>名前：<span th:text="${session.user.userName}" /></div>
 	<div>ID:<span th:text="${session.user.userID}" /></div>
-	<h1>メニュー新規設定</h1>
-
-	<table>
-		<td>
-			<form method="POST" action="/exerciseMenu/MS201ExerciseMenu">
-				<input type="submit" value="戻る" />
-			</form>
-		</td>
-		<td>
-			<form method="POST" action="/exerciseUser/MS190Logout">
-				<input type="submit" value="ログアウト" />
-			</form>
-		</td>
-	</table>
-	<table border="1">
-		<tr>
-			<th>No</th>
-			<th>新規トレーニングメニュー</th>
-			<th>新規メニュー消費カロリー(kcal)</th>
-			<th colspan="2"></th>
-		</tr>
-		<tr>
-			<form method="POST" action="/exerciseMenu/MS202Put" th:object="${exercise}">
-				<td>
-					<input type="hidden" th:field="*{exerciseID}" th:text="*{exerciseID}" />
-					<input type="hidden" th:field="*{userID}" />
-				</td>
-
-				<td><input type="text" th:field="*{exerciseName}" /></td>
-				<!--<div th:if="${#fields.hasErrors('exerciseName')}" th:errors="*{exerciseName}"></div>-->
-
-				<td><input type="text" th:field="${exercise.exerciseCal}" /></td>
-				<!--<div th:if="${#fields.hasErrors('exerciseCal')}" th:errors="*{exerciseCal}"></div>-->
-				<td><input type="submit" value="追加する" /></td>
-				<!--<td><input type="reset" value="クリア" /></td>-->
-			</form>
-		</tr>
-		<tr>
-			<th>No</th>
-			<th>変更するトレーニングメニュー</th>
-			<th>変更するメニュー消費カロリー(kcal)</th>
-			<th colspan="2"></th>
-		</tr>
-		<form method="POST" action="/exerciseMenu/MS202Modify" th:object="${exerciseListDto}">
-			<tr th:each="exercise,status: *{exerciseList}">
-				<td>
-					<input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
-						th:text="${exercise.exerciseID}" />
-					<input type="hidden" th:field="*{exerciseList[__${status.index}__].userID}" />
-				</td>
-				<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseName}" /></td>
-				<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseCal}" /></td>
-				<td><input type="submit" value="変更する" /></td>
-				<!--<td><input type="reset" value="クリア" /></td>-->
-			</tr>
-		</form>
-	</table>
-	<br>
-	<th:block th:if="${showEList != null}">
-		<div>以下のように変更されました</div>
-		<table th:each="e: ${showEList}"　border="1">
-			<tr>
-			<th>No</th>
-			<th>トレーニングメニュー</th>
-			<th>消費カロリー</th>
-			</tr>
-			<tr>
-				<td>
-					<div th:text=${e.exerciseID}></div>
-				</td>
-				<td>
-					<div th:text=${e.exerciseName}></div>
-				</td>
-				<td>
-					<div><p th:text=${e.exerciseCal}></p></div>
-				</td>
-			</tr>
+	<div class="text-center">
+		<h1>メニュー新規設定</h1>
+	</div>
+	<div class="container">
+		<table class="d-flex align-items-center justify-content-center">
+			<td>
+				<form method="POST" th:action="@{/exerciseMenu/MS201ExerciseMenu}">
+					<input type="submit" value="戻る" class="btn-lg" />
+				</form>
+			</td>
+			<td>
+				<form method="POST" th:action="@{/exerciseUser/MS190Logout}">
+					<input type="submit" value="ログアウト" class="btn-lg" />
+				</form>
+			</td>
 		</table>
-	</th:block>
+		<table border="1" align="center" class="table-striped">
+			<div class="form-group">
+				<tr class="table-primary">
+					<th>No</th>
+					<th>新規トレーニングメニュー</th>
+					<th>新規メニュー消費カロリー(kcal)</th>
+					<th colspan="2"></th>
+				</tr>
+				<tr>
+					<form method="POST" th:action="@{/exerciseMenu/MS202Put}" th:object="${exercise}">
+						<td>
+							<input type="hidden" th:field="*{exerciseID}" th:text="*{exerciseID}" />
+							<input type="hidden" th:field="*{userID}" />
+						</td>
 
+						<td><input type="text" th:field="*{exerciseName}" class="form-control" /></td>
+						<!--<div th:if="${#fields.hasErrors('exerciseName')}" th:errors="*{exerciseName}"></div>-->
+
+						<td><input type="text" th:field="${exercise.exerciseCal}" class="form-control" /></td>
+						<!--<div th:if="${#fields.hasErrors('exerciseCal')}" th:errors="*{exerciseCal}"></div>-->
+						<td><input type="submit" value="追加する" /></td>
+						<!--<td><input type="reset" value="クリア" /></td>-->
+					</form>
+				</tr>
+				<tr>
+					<th>No</th>
+					<th>変更するトレーニングメニュー</th>
+					<th>変更するメニュー消費カロリー(kcal)</th>
+					<th colspan="2"></th>
+				</tr>
+				<form method="POST" th:action="@{/exerciseMenu/MS202Modify}" th:object="${exerciseListDto}">
+					<tr th:each="exercise,status: *{exerciseList}">
+						<td>
+							<input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
+								th:text="${exercise.exerciseID}"/>
+							<input type="hidden" th:field="*{exerciseList[__${status.index}__].userID}"/>
+						</td>
+						<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseName}"
+								class="form-control" /></td>
+						<td><input type="text" th:field="*{exerciseList[__${status.index}__].exerciseCal}"
+								class="form-control" /></td>
+						<td><input type="submit" value="変更する" /></td>
+						<!--<td><input type="reset" value="クリア" /></td>-->
+					</tr>
+				</form>
+			</div>
+		</table>
+		<br>
+		<th:block th:if="${showEList != null}">
+			<div class="text-center">以下のように変更されました</div>
+			<table border="1" align="center" class="table-striped">
+				<div class="form-group">
+					<tr>
+						<th>No</th>
+						<th>トレーニングメニュー</th>
+						<th>消費カロリー</th>
+					</tr>
+					<tr th:each="e: ${showEList}">
+						<td>
+							<div th:text="${e.exerciseID}"></div>
+						</td>
+						<td>
+							<div th:text="${e.exerciseName}"></div>
+						</td>
+						<td>
+							<div>
+								<p th:text="${e.exerciseCal}"></p>
+							</div>
+						</td>
+					</tr>
+				</div>
+			</table>
+		</th:block>
+	</div>
 </body>

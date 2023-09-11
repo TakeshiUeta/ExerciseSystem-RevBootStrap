@@ -24,19 +24,19 @@
 		<table align="center">
 			<tr>
 				<td>
-					<form method="post" action="/exerciseResult/MS207MonthlyTotal">
+					<form method="post" th:action="@{/exerciseResult/MS207MonthlyTotal}">
 						<input type="submit" value="次に進む" class="btn-lg btn-primary"/>
 					</form>
 				</td>
 
 				<td>
-					<form method="post" action="/exerciseMenu/MS201ExerciseMenu">
+					<form method="post" th:action="@{/exerciseMenu/MS201ExerciseMenu}">
 						<input type="submit" value="TOPに戻る" class="btn-lg"/>
 					</form>
 				</td>
 
 				<td>
-					<form method="get" action="/exerciseUser/MS190Logout">
+					<form method="get" th:action="@{/exerciseUser/MS190Logout}">
 						<input type="submit" value="ログアウト" class="btn-lg"/>
 					</form>
 				</td>

@@ -38,7 +38,7 @@
 		<table border="1" align="center">
 			<div class="form-group">
 				<th>検索キーワード</th>
-				<form method="POST" action="/exerciseMenu/searchExercise">
+				<form method="POST" th:action="@{/exerciseMenu/searchExercise}">
 					<td>
 						<input type="text" class="form-control" name="keyword" />
 					</td>
@@ -51,18 +51,18 @@
 		<table align="center">
 			<div class="form-group">
 				<td>
-					<form method="POST" action="/exerciseMenu/MS201Check"><input type="submit" class="btn btn-lg btn-primary " value="確認" /></form>
+					<form method="POST" th:action="@{/exerciseMenu/MS201Check}"><input type="submit" class="btn btn-lg btn-primary " value="確認" /></form>
 				</td>
 				<td>
-					<form method="Get" action="/exerciseUser/MS111LetsExercise"><input type="submit" class="btn-lg" value="戻る" />
+					<form method="Get" th:action="@{/exerciseUser/MS111LetsExercise}"><input type="submit" class="btn-lg" value="戻る" />
 					</form>
 				</td>
 				<td>
-					<form method="POST" action="/exerciseMenu/MS201NewSettings"><input type="submit" class="btn-lg" value="新規設定" />
+					<form method="POST" th:action="@{/exerciseMenu/MS201NewSettings}"><input type="submit" class="btn-lg" value="新規設定" />
 					</form>
 				</td>
 				<td>
-					<form method="POST" action="/exerciseUser/MS190Logout"><input type="submit" class="btn-lg" value="ログアウト" /></form>
+					<form method="POST" th:action="@{/exerciseUser/MS190Logout}"><input type="submit" class="btn-lg" value="ログアウト" /></form>
 				</td>
 			</div>
 		</table>
@@ -78,7 +78,7 @@
 					<th>回数</th>
 					<th></th>
 				</tr>
-				<form method="GET" action="/exerciseMenu/MS201add" th:object="${exerciseListDto}">
+				<form method="GET" th:action="@{/exerciseMenu/MS201add}" th:object="${exerciseListDto}">
 					<tr th:each="exercise,status: *{exerciseList}">
 						<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
 								th:text="${exercise.exerciseID}" class="form-control" ></td>

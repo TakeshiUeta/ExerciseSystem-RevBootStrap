@@ -20,34 +20,34 @@
 		<h1 class="display-2">ユーザー更新</h1>
 	</div>
 	
-		<form method="GET" th:object="${user}" action="/exerciseUser/MS103UserUpDate">
+		<form method="GET" th:object="${user}" th:action="@{/exerciseUser/MS103UserUpDate}">
 		<div class="form-group row" align="center">
 				<input type="hidden" th:field="*{userID}" />
 				<div th:if="${#fields.hasErrors('userID')}" th:errors="*{userID}"></div>
 
 				<label class="col-sm-4 col-form-label" style="font-size: 30px;">会員名：</label>
-				<div class="col-md-6"><input type="text" th:field="*{userName}" class="form-control"/>
+				<div class="col-md-6"><input type="text" th:field="*{userName}" class="form-control" placeholder="筋肉スグル"/>
 					<div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div>
 				</div>
 			
 				<label class="col-sm-4 col-form-label" style="font-size: 30px;">電話番号：</label>
-				<div class="col-md-6"><input type="text" th:field="*{userTelno}" class="form-control" />
+				<div class="col-md-6"><input type="text" th:field="*{userTelno}" class="form-control" placeholder="045-128-3581"/>
 					<div th:if="${#fields.hasErrors('userTelno')}" th:errors="*{userTelno}"></div>
 				</div>
 			
 			
 				<label class="col-sm-4 col-form-label" style="font-size: 30px;">郵便番号：</label>
-				<div class="col-md-6"><input type="text" th:field="*{userPostcode}" class="form-control"/>
+				<div class="col-md-6"><input type="text" th:field="*{userPostcode}" class="form-control"placeholder="123-4567"/>
 					<div th:if="${#fields.hasErrors('userPostcode')}" th:errors="*{userPostcode}"></div>
 				</div>
 				
 				<label class="col-sm-4 col-form-label" style="font-size: 30px;">住所：</label>
-				<div class="col-md-6"><input type="text" th:field="*{userAddress}" class="form-control"/>
+				<div class="col-md-6"><input type="text" th:field="*{userAddress}" class="form-control" placeholder="横浜市西区みなとみらい２－１"/>
 					<div th:if="${#fields.hasErrors('userAddress')}" th:errors="*{userAddress}"></div>
 				</div>
 				
 				<label class="col-sm-4 col-form-label" style="font-size: 30px;">パスワード：</label>
-				<div class="col-md-6"><input type="password" th:field="*{userPassword}" class="form-control"/>
+				<div class="col-md-6"><input type="password" th:field="*{userPassword}" class="form-control" placeholder="12-356"/>
 					<div th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"></div>
 				</div>
 				
@@ -59,7 +59,7 @@
 	</div>
 	</form>
 
-	<form method="get" action="/exerciseUser/MS111LetsExercise" align="center">
+	<form method="get" th:action="@{/exerciseUser/MS111LetsExercise}" align="center">
 		<div><input type="submit" value="戻る" class="btn-lg btn-info"/></div>
 	</form>
 	
@@ -69,9 +69,8 @@
 	<div align="center"  style="font-size: 40px;">現在の登録状況</div>
 	
 	<block th:if="${session.user != null}">
-	<div align="center" class="form-group row">
-		<p th:text="${msg}"></p>
-		
+	<div class="container">
+		<h2 th:text="${msg}" style="color:red;" align="center"></h2>
 		<label class="col-sm-4" style="font-size: 30px;">ID：</label>
 		<span th:text="${session.user.userID}" style="font-size: 30px;"/>
 		

@@ -26,19 +26,19 @@
 		<table align="center">
 			<tr>
 				<td>
-					<form method="post" action="/exerciseResult/MS203Enter">
+					<form method="post" th:action="@{/exerciseResult/MS203Enter}">
 						<input type="submit" value="確定" class="btn-primary btn-lg"/>
 					</form>
 				</td>
 
 				<td>
-					<form method="post" action="/exerciseMenu/MS201ExerciseMenu">
+					<form method="post" th:action="@{/exerciseMenu/MS201ExerciseMenu}">
 						<input type="submit" value="戻る" class="btn-lg"/>
 					</form>
 				</td>
 
 				<td>
-					<form method="post" action="/exerciseUser/MS190Logout">
+					<form method="post" th:action="@{/exerciseUser/MS190Logout}">
 						<input type="submit" value="ログアウト" class="btn-lg"/>
 					</form>
 				</td>
@@ -53,7 +53,7 @@
 				<th>回数</th>
 				<th>合計カロリー(kcal)</th>
 			</tr>
-			<form method="POST" action="/exerciseMenu/MS203Recalculation" th:object="${exerciseListDto}">
+			<form method="POST" th:action="@{/exerciseMenu/MS203Recalculation}" th:object="${exerciseListDto}">
 				<input type="submit" value="再計算" class="btn-lg btn-info">
 				<tr th:each="exercise,status: *{exerciseList}">
 					<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseID}"
