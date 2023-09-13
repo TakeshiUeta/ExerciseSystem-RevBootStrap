@@ -1,33 +1,32 @@
 # ExerciseSystem-RevBootStrap
-ExerciseSystem-RevBootStrap
-アプリ名：筋トレ_消費カロリー・徒歩距離計算アプリ
-URL
-http://54.150.193.189:8080/ExerciseSystem-0.0.1-SNAPSHOT/exerciseUser/MS101UserLogin
-（こちらからアクセスできますが、プライバシー保護のため個人情報は入力しないでください。）
+## アプリ名：筋トレ_消費カロリー・徒歩距離計算アプリ
+URL  
+http://54.150.193.189:8080/ExerciseSystem-0.0.1-SNAPSHOT/exerciseUser/MS101UserLogin<br>
+（こちらからアクセスできますが、プライバシー保護のため個人情報は入力しないでください。）  
 
-概要
-筋トレの実績を消費カロリーとそれを基に歩いた距離を計算して、記録するアプリケーションです。
-目指した課題解決
+## 概要  
+筋トレの実績を消費カロリーとそれを基に歩いた距離を計算して、記録するアプリケーションです。  
+## 目指した課題解決  
 筋トレを漫然と行っていて成果がわからず、モチベーションが上がらない人向け。
 毎日行う筋トレの成果を消費カロリー、歩いた距離に変換。
 ユーザーの健康を維持するとともに達成感を味わってもらいモチベーションを上げてもらう。
-使用した技術
-バックエンド
-・Spring-Boot2.6.3
-・MySQL
-・Java17
-・Maven
-・MyBatis
-フロントエンド
-・thyme-leaf
-・html・CSS
-・Boot-Strap4.5
-・jquery
-インフラ
+## 使用した技術
+### バックエンド
+・Spring-Boot2.6.3<br>
+・MySQL<br>
+・Java17<br>
+・Maven<br>
+・MyBatis<br>
+### フロントエンド
+・thyme-leaf<br>
+・html・CSS<br>
+・Boot-Strap4.5<br>
+・jquery<br>
+### インフラ
 ・AWS(IAMUser,EC2)
-・Tomcat
-・mariaDB
-・H2DB
+・Tomcat<br>
+・mariaDB<br>
+・H2DB<br>
 
 テスト用アカウント
 ID/Passは以下をお使いください。
