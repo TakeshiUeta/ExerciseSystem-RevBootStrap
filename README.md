@@ -1,5 +1,5 @@
 # ExerciseSystem-RevBootStrap
-## アプリ名：筋トレ_消費カロリー・徒歩距離計算アプリ
+## アプリ名：[筋トレ_消費カロリー・徒歩距離計算アプリ](http://54.150.193.189:8080/ExerciseSystem-0.0.1-SNAPSHOT/exerciseUser/MS101UserLogin)
 URL  
 http://54.150.193.189:8080/ExerciseSystem-0.0.1-SNAPSHOT/exerciseUser/MS101UserLogin<br>
 （こちらからアクセスできますが、プライバシー保護のため個人情報は入力しないでください。）  
