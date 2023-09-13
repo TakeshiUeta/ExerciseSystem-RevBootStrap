@@ -119,6 +119,8 @@ public class ExerciseController {
 		int exerciseCount = (int) session.getAttribute("exerciseCount");
 		// 総合カロリー
 		double sumCal = (double) session.getAttribute("sumCal");
+		//総合カロリーを丸めるのでその前の変数を作成
+		double sumCalA = 0;
 		// カートがnullの場合は改めてNewする
 		if (exercisesCart == null) {
 			exercisesCart = new ArrayList<>();
@@ -135,10 +137,12 @@ public class ExerciseController {
 				// カートに入れた筋トレ件数を加える
 				exerciseCount++;
 				// カートに入れた筋トレの総カロリーを出す
-				sumCal += totalCal;
+				sumCalA += totalCal;
 			}
 		}
-
+		//sumCalAを小数点第3で四捨五入	して丸める	
+		sumCal = (double)Math.round(sumCalA * 1000) / 1000; // 1000倍してから四捨五入し、1000で割る
+		
 		// セッションスコープにカートを格納する
 		session.setAttribute("exercisesCart", exercisesCart);
 		// セッションスコープにトレーニング件数を格納する
@@ -303,6 +307,8 @@ public class ExerciseController {
 		}
 		// 総合カロリーを作成
 		double totalCal = 0;
+		//総合カロリーを丸める前の変数を用意する
+		double totalCalBgin=0;
 		// 総合回数を作成
 		int totalCount = 0;
 		for (Exercise e : exercisesCart) {
@@ -310,8 +316,10 @@ public class ExerciseController {
 			double cal = e.getExerciseCal();
 			double calVallue = count * cal;
 			totalCount += count;
-			totalCal += calVallue;
+			totalCalBgin += calVallue;
 		}
+		//総合カロリーを小数第3位で四捨五入して丸める
+		totalCal = (double)Math.round(totalCalBgin * 1000) / 1000;
 		// exerciseListDtoにカートをセットする
 		exerciseListDto.setExerciseList(exercisesCart);
 		// modelに総合カロリーをセットする

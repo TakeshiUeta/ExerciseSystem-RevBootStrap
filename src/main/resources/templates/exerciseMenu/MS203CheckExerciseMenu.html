@@ -63,12 +63,12 @@
 					<td><input type="hidden" th:field="*{exerciseList[__${status.index}__].exerciseCal}"
 							th:text="${exercise.exerciseCal}"></td>
 					<td><input type="text" th:field="*{exerciseList[__${status.index}__].count}"  class="form-control"/> </td>
-					<td><input type="hidden" th:text="${exercise.exerciseCal} * ${exercise.count}" /></td>
+					<td> <input type="hidden"  th:text="${#numbers.formatDecimal(exercise.exerciseCal * exercise.count, 1, 2)}"/></td>
 				</tr>
 				<tr>
 					<th colspan="3">合計</th>
-					<td><input type="hidden" th:text="${totalCount}" </td>
-					<td><input type="hidden" th:text="${totalCal}" </td>
+					<td><input type="hidden" th:text="${totalCount}"/></td>
+					<td><input type="hidden" th:text="${totalCal}"/></td>
 				</tr>
 			</form>
 		</table>
