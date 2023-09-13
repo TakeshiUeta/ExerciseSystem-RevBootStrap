@@ -10,30 +10,32 @@ http://54.150.193.189:8080/ExerciseSystem-0.0.1-SNAPSHOT/exerciseUser/MS101UserL
 筋トレを漫然と行っていて成果がわからず、モチベーションが上がらない人向け。
 毎日行う筋トレの成果を消費カロリー、歩いた距離に変換。
 ユーザーの健康を維持するとともに達成感を味わってもらいモチベーションを上げてもらう。
+
 ## 使用した技術
-### バックエンド
+**バックエンド**<br>
 ・Spring-Boot2.6.3<br>
 ・MySQL<br>
 ・Java17<br>
 ・Maven<br>
 ・MyBatis<br>
-### フロントエンド
+**フロントエンド**<br>
 ・thyme-leaf<br>
 ・html・CSS<br>
 ・Boot-Strap4.5<br>
 ・jquery<br>
-### インフラ
-・AWS(IAMUser,EC2)
+**インフラ**<br>
+・AWS(IAMUser,EC2)<br>
 ・Tomcat<br>
 ・mariaDB<br>
 ・H2DB<br>
 
-テスト用アカウント
+## テスト用アカウント
 ID/Passは以下をお使いください。
-
+```
    ID    :UR0013
    Pass  :ps0013
-使用方法
+```
+### 使用方法
 ※アプリのページ構造に関しては101筋トレアプリ画面遷移図をご確認ください。
 （DesignBookディレクトリに格納されています。）
 
