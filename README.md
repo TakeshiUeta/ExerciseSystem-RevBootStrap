@@ -40,19 +40,20 @@ ID/Passは以下をお使いください。
 （DesignBookディレクトリに格納されています。）
 
 ### ・基本操作と流れ
-**テストコードを使用してログインしてください**
+**テスト用アカウント**を使用してログインしてください
 ![MS101UserLogin-個人-Microsoft_-Edge-2023-09-13-23-54-48](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/d5de192d-5b21-46d5-b45d-38cfe998b30f)
 
-**トレーニングメニューに遷移して行った筋トレメニューの回数を入力して追加を押下。その後確認を押下してください**
+トレーニングメニューに遷移して行った**筋トレメニューの回数**を入力して**追加**を押下。その後**確認**を押下してください**
 ![Let’sExercise！-個人-Microsoft_-Edge-2023-09-13-23-55-11](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/4ae5cd16-6036-4363-b4d8-15e97f7f112d)
 
-**回数に問題がないならそのまま確定を押下。筋トレの1週間の成果が表示されます。次に進むを押下すると1ヶ月の成果が表示されます。特にこれ以上操作が無い場合はログアウトしてください。**
+回数に問題がないならそのまま**確定**を押下。筋トレの1週間の成果が表示されます。**次に進む**を押下すると1ヶ月の成果が表示されます。特にこれ以上操作が無い場合は**ログアウト**してください。
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-59-36](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/e728b27d-2de1-4a9e-83c2-6760d050eac2)
 
-**違う回数だった場合はその回数を入力し再計算を押下してください。**
+###  ・その他の操作
+違う回数だった場合はその**回数を入力**し**再計算**を押下してください。
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-58-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/13f33dd0-0dd2-4c3a-8f0e-b6628e27c0ac)
 
-### ・
+
 
 ## 各画面・モジュールの説明
 ```  
