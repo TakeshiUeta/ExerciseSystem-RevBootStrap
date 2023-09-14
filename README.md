@@ -39,7 +39,7 @@ ID/Passは以下をお使いください。
 ※アプリのページ構造に関しては101筋トレアプリ画面遷移図をご確認ください。  
 （DesignBookディレクトリに格納されています。）
 
-### ・基本操作と流れ
+### 基本操作と流れ
 ・**UserLogin**画面<br>
 ・**テスト用アカウント**を使用してログイン<br>
 ・**Let’sExercise**画面に遷移します。<br>
@@ -64,7 +64,7 @@ ID/Passは以下をお使いください。
 ・**UserLogin**画面に遷移します。<br>
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-59-36](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/e728b27d-2de1-4a9e-83c2-6760d050eac2)
 
-### ・その他の操作
+### その他の操作
 #### ユーザー個人のトレーニングメニューを追加<br>
 ・トレーニングメニューの**新規設定**を押下<br>
 ・**新規トレーニングメニュー**で任意のトレーニングメニューを入力<br>
