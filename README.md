@@ -40,20 +40,28 @@ ID/Passは以下をお使いください。
 （DesignBookディレクトリに格納されています。）
 
 ### ・基本操作と流れ
-**テスト用アカウント**を使用してログイン
+・**UserLogin**画面<br>
+・**テスト用アカウント**を使用してログイン<br>
+・**Let’sExercise**画面に遷移します。<br>
 ![MS101UserLogin-個人-Microsoft_-Edge-2023-09-13-23-54-48](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/d5de192d-5b21-46d5-b45d-38cfe998b30f)
 
-・**トレーニングメニュー**を押下してメニュー画面に遷移<br>
+・**トレーニングメニュー**を押下<br>
+・**トレーニングメニュー**画面に遷移します。
 ・行った**筋トレメニューの回数**を入力<br>
 ・**追加**を押下。<br>
 ・その後**確認**を押下<br>
+・**トレーニングメニュー確認**画面に遷移します。<br>
 ![Let’sExercise！-個人-Microsoft_-Edge-2023-09-13-23-55-11](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/4ae5cd16-6036-4363-b4d8-15e97f7f112d)
 
+
 ・回数を変更しないならそのまま**確定**を押下<br>
-・筋トレの1週間の成果が表示されます。<br>
+・**結果：一週間の集計**画面に遷移します。<br>
 ・**次に進む**を押下<br>
-・1ヶ月の成果が表示されます。<br>
-・特にこれ以上操作が無い場合は**ログアウト**<br>
+・**結果：1ヶ月の集計**画面に遷移します。<br>
+・特にこれ以上操作が無い場合は**ログアウト**を押下。<br>
+・**ログアウト**画面に遷移します。<br>
+・**ログイン画面に戻る**を押下<br>
+・**UserLogin**画面に遷移します。<br>
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-59-36](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/e728b27d-2de1-4a9e-83c2-6760d050eac2)
 
 ### ・その他の操作
@@ -62,21 +70,21 @@ ID/Passは以下をお使いください。
 ・**新規トレーニングメニュー**で任意のトレーニングメニューを入力<br>
 ・**新規メニュー消費カロリー**で任意の消費カロリーを入力<br>
 ・**追加する**を押下<br>
-・追加されたメニュー**変更するトレーニングメニュー**に追加されます。
+・追加されたメニュー**変更するトレーニングメニュー**に追加されます。<br>
 ![MS201ExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/3fa174c3-a5e9-42cf-95be-8b9148d8be70)
 
 ### ユーザー個人のトレーニングメニューの内容を編集して変更する
-・**メニュー新規設定**画面
-・**変更するトレーニングメニュー**で任意のトレーニングメニューを入力
-・**変更するメニュー消費カロリー(kcal**で任意の消費カロリーを入力
-・**変更**を押下
-・変更された内容が画面下部に表示されます。
+・**メニュー新規設定**画面<br>
+・**変更するトレーニングメニュー**で任意のトレーニングメニューを入力<br>
+・**変更するメニュー消費カロリー(kcal**で任意の消費カロリーを入力<br>
+・**変更**を押下<br>
+・変更された内容が画面下部に表示されます。<br>
 ![MS202PutExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-50](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/055efd8b-ded5-49ba-82b9-6101d1d16f9b)
 
 ### トレーニングメニュー確認でメニューの回数を変更する
-・**トレーニングメニュー確認**画面
-・行った筋トレの回数が違う場合任意の**回数を入力**
-・**再計算**を押下
+・**トレーニングメニュー確認**画面<br>
+・行った筋トレの回数が違う場合任意の**回数を入力**<br>
+・**再計算**を押下<br>
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-58-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/13f33dd0-0dd2-4c3a-8f0e-b6628e27c0ac)
 
 
