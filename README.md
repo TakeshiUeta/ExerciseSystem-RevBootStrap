@@ -36,21 +36,41 @@ ID/Passは以下をお使いください。
    Pass  :ps0013
 ```
 ## 使用方法
-※アプリのページ構造に関しては101筋トレアプリ画面遷移図をご確認ください。
+※アプリのページ構造に関しては101筋トレアプリ画面遷移図をご確認ください。  
 （DesignBookディレクトリに格納されています。）
 
 ### ・基本操作と流れ
-**テスト用アカウント**を使用してログインしてください
+**テスト用アカウント**を使用してログイン
 ![MS101UserLogin-個人-Microsoft_-Edge-2023-09-13-23-54-48](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/d5de192d-5b21-46d5-b45d-38cfe998b30f)
 
-トレーニングメニューに遷移して行った**筋トレメニューの回数**を入力して**追加**を押下。その後**確認**を押下してください**
+・トレーニングメニューに遷移<br>
+・行った**筋トレメニューの回数**を入力<br>
+・**追加**を押下。<br>
+・その後**確認**を押下<br>
 ![Let’sExercise！-個人-Microsoft_-Edge-2023-09-13-23-55-11](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/4ae5cd16-6036-4363-b4d8-15e97f7f112d)
 
-回数に問題がないならそのまま**確定**を押下。筋トレの1週間の成果が表示されます。**次に進む**を押下すると1ヶ月の成果が表示されます。特にこれ以上操作が無い場合は**ログアウト**してください。
+・回数を変更しないならそのまま**確定**を押下<br>
+・筋トレの1週間の成果が表示されます。<br>
+・**次に進む**を押下<br>
+・1ヶ月の成果が表示されます。<br>
+・特にこれ以上操作が無い場合は**ログアウト**<br>
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-59-36](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/e728b27d-2de1-4a9e-83c2-6760d050eac2)
 
-###  ・その他の操作
-違う回数だった場合はその**回数を入力**し**再計算**を押下してください。
+### ・その他の操作
+### ユーザー個人のトレーニングメニューを追加
+・トレーニングメニューの**新規設定**を押下
+・**新規トレーニングメニュー**で任意のトレーニングメニューを入力
+・**新規メニュー消費カロリー**で任意の消費カロリーを入力
+・**追加する**を押下
+![MS201ExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/3fa174c3-a5e9-42cf-95be-8b9148d8be70)
+
+### ユーザー個人のトレーニングメニューの内容を編集して変更する
+・**メニュー新規設定**画面
+・
+・
+![MS202PutExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-50](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/055efd8b-ded5-49ba-82b9-6101d1d16f9b)
+
+違う回数だった場合はその**回数を入力**し**再計算**を押下してください
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-58-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/13f33dd0-0dd2-4c3a-8f0e-b6628e27c0ac)
 
 
