@@ -65,7 +65,7 @@ ID/Passは以下をお使いください。
 ![MS203CheckExerciseMenu-個人-Microsoft_-Edge-2023-09-13-23-59-36](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/e728b27d-2de1-4a9e-83c2-6760d050eac2)
 
 ### ・その他の操作
-### ユーザー個人のトレーニングメニューを追加<br>
+#### ユーザー個人のトレーニングメニューを追加<br>
 ・トレーニングメニューの**新規設定**を押下<br>
 ・**新規トレーニングメニュー**で任意のトレーニングメニューを入力<br>
 ・**新規メニュー消費カロリー**で任意の消費カロリーを入力<br>
@@ -73,7 +73,7 @@ ID/Passは以下をお使いください。
 ・追加されたメニュー**変更するトレーニングメニュー**に追加されます。<br>
 ![MS201ExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-16](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/3fa174c3-a5e9-42cf-95be-8b9148d8be70)
 
-### ユーザー個人のトレーニングメニューの内容を編集して変更する
+#### ユーザー個人のトレーニングメニューの内容を編集して変更する
 ・**メニュー新規設定**画面<br>
 ・**変更するトレーニングメニュー**で任意のトレーニングメニューを入力<br>
 ・**変更するメニュー消費カロリー(kcal**で任意の消費カロリーを入力<br>
@@ -81,7 +81,7 @@ ID/Passは以下をお使いください。
 ・変更された内容が画面下部に表示されます。<br>
 ![MS202PutExerciseMenu-個人-Microsoft_-Edge-2023-09-14-16-07-50](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/055efd8b-ded5-49ba-82b9-6101d1d16f9b)
 
-### トレーニングメニュー確認でメニューの回数を変更する
+#### トレーニングメニュー確認でメニューの回数を変更する
 ・**トレーニングメニュー確認**画面<br>
 ・行った筋トレの回数が違う場合任意の**回数を入力**<br>
 ・**再計算**を押下<br>
