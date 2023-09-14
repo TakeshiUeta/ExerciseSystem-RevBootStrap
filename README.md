@@ -46,7 +46,7 @@ ID/Passは以下をお使いください。
 ![MS101UserLogin-個人-Microsoft_-Edge-2023-09-13-23-54-48](https://github.com/TakeshiUeta/ExerciseSystem-RevBootStrap/assets/86597233/d5de192d-5b21-46d5-b45d-38cfe998b30f)
 
 ・**トレーニングメニュー**を押下<br>
-・**トレーニングメニュー**画面に遷移します。
+・**トレーニングメニュー**画面に遷移します。<br>
 ・行った**筋トレメニューの回数**を入力<br>
 ・**追加**を押下。<br>
 ・その後**確認**を押下<br>
